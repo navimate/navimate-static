@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NaviMate — Privacy Policy</title>
+<link rel="icon" type="image/png" href="icon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="icon-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icon-light.png">
 <!--
   Served by GitHub Pages from the public navimate/navimate-static repository.
   Reachable at https://navimate.github.io/navimate-static/privacy/,
@@ -24,37 +27,73 @@
   CDN is a bad look, and it would also be the only tracking this project has.
 -->
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6c6c70;
+    --surface: #f2f2f7;
+    --border: #d1d1d6;
+    --link: #0066cc;
+    --icon-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f7;
+      --muted: #98989d;
+      --surface: #2c2c2e;
+      --border: #3a3a3c;
+      --link: #4da3ff;
+      --icon-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+  }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     max-width: 44rem;
     margin: 0 auto;
     padding: 2rem 1.25rem 4rem;
-    color: #1c1c1e;
-    background: #fff;
+    color: var(--fg);
+    background: var(--bg);
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e5e5e7; background: #1c1c1e; }
-    code { background: #2c2c2e; }
-    th { background: #2c2c2e; }
-    td, th { border-color: #3a3a3c; }
-    .meta { color: #98989d; }
+  .brand-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
-  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+  .brand-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    box-shadow: var(--icon-shadow);
+    flex-shrink: 0;
+    display: block;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 0.15rem 0; line-height: 1.2; }
   h2 { font-size: 1.25rem; margin-top: 2.25rem; }
-  .meta { color: #6c6c70; font-size: 0.9rem; margin-top: 0; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  a { color: var(--link); text-underline-offset: 2px; }
   table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  td, th { border: 1px solid #d1d1d6; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
-  th { background: #f2f2f7; }
-  code { background: #f2f2f7; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
-  footer { margin-top: 3rem; font-size: 0.85rem; color: #6c6c70; }
+  td, th { border: 1px solid var(--border); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: var(--surface); color: var(--fg); font-weight: 600; }
+  code { background: var(--surface); color: var(--fg); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+  footer { margin-top: 3rem; font-size: 0.85rem; color: var(--muted); }
 </style>
 </head>
 <body>
 
-<h1>NaviMate — Privacy Policy</h1>
-<p class="meta">Last updated 26 September 2026</p>
+<header class="brand-header">
+  <picture>
+    <source srcset="icon-dark.png" media="(prefers-color-scheme: dark)">
+    <img class="brand-icon" src="icon-light.png" alt="NaviMate app icon" width="64" height="64">
+  </picture>
+  <div>
+    <h1>NaviMate — Privacy Policy</h1>
+    <p class="meta">Last updated 26 September 2026</p>
+  </div>
+</header>
 
 <p>
   NaviMate is a walking-tour app that writes your tour as you walk, using
