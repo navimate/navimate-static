@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaviMate — Privacy Policy</title>
+<!--
+  Served by GitHub Pages from the public navimate/navimate-static repository.
+  Reachable at https://navimate.github.io/navimate-static/privacy/,
+  which is the URL in AppConfig.privacyPolicyURL, ConsentGateScreen.kt,
+  App Store Connect, and Google Play Console.
+
+  This is the single source of truth for the policy. There is deliberately no
+  parallel PRIVACY.md: two copies of a legal document is how the version review
+  reads and the version the user accepted end up disagreeing.
+
+  It must stay in step with two other files. If you change what the app collects,
+  change all three:
+    * NaviMate/NaviMate/PrivacyInfo.xcprivacy   (the four declared types)
+    * ios_swiftui/Views/ConsentGateView.swift           (the in-app summary)
+    * this file
+
+  No external CSS, fonts, analytics or trackers. A privacy policy that phones a
+  CDN is a bad look, and it would also be the only tracking this project has.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    color: #1c1c1e;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5e7; background: #1c1c1e; }
+    code { background: #2c2c2e; }
+    th { background: #2c2c2e; }
+    td, th { border-color: #3a3a3c; }
+    .meta { color: #98989d; }
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.25rem; }
+  .meta { color: #6c6c70; font-size: 0.9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  td, th { border: 1px solid #d1d1d6; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f2f2f7; }
+  code { background: #f2f2f7; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+  footer { margin-top: 3rem; font-size: 0.85rem; color: #6c6c70; }
+</style>
+</head>
+<body>
+
+<h1>NaviMate — Privacy Policy</h1>
+<p class="meta">Last updated 26 September 2026</p>
+
+<p>
+  NaviMate is a walking-tour app that writes your tour as you walk, using
+  Google's Gemini AI. This policy explains exactly what leaves your iPhone, who
+  receives it, and why. It is short because the app does very little with your
+  data.
+</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>There is <strong>no NaviMate account</strong>, and no NaviMate server that stores anything about you.</li>
+  <li>Your saved tours, journal entries and photographs stay <strong>on your iPhone</strong>.</li>
+  <li>There is <strong>no tracking</strong>: no advertising identifier, no analytics SDK, no third-party trackers, and nothing shared with data brokers.</li>
+  <li>Two companies receive data, and only to make the app work: <strong>Google</strong> (to write your tours) and <strong>Apple</strong> (to turn your speech into text).</li>
+  <li>Nothing is sold, and nothing is used for advertising.</li>
+</ul>
+
+<h2>What is collected, and who receives it</h2>
+
+<table>
+  <thead>
+    <tr><th>Data</th><th>When</th><th>Who receives it</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Precise location</strong></td>
+      <td>While a tour or an Explore session is running</td>
+      <td>Google</td>
+      <td>To find landmarks near you and to write narration about where you actually are. Your coordinates are included in the request sent to the Gemini API, and in map and place lookups.</td>
+    </tr>
+    <tr>
+      <td><strong>Photographs</strong></td>
+      <td>Only when you take a picture with Landmark Lens</td>
+      <td>Google</td>
+      <td>The single photograph is uploaded so the model can identify what you are looking at. Nothing is uploaded unless you deliberately take a picture.</td>
+    </tr>
+    <tr>
+      <td><strong>Microphone audio</strong></td>
+      <td>While you are speaking to your guide</td>
+      <td><strong>Apple</strong></td>
+      <td>Speech recognition uses Apple's <code>Speech</code> framework, which sends audio to Apple's servers to transcribe it. See the note below — this one surprises people.</td>
+    </tr>
+    <tr>
+      <td><strong>Your words, as text</strong></td>
+      <td>When you ask a question, type a tour theme, or write a journal note</td>
+      <td>Google</td>
+      <td>So your guide can answer you, and so your tour matches the theme you asked for.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>About the microphone, specifically</h2>
+<p>
+  This is worth stating plainly, because the obvious assumption is wrong in one
+  direction and right in the other.
+</p>
+<ul>
+  <li>
+    Your voice audio <strong>does go to Apple</strong>. NaviMate uses
+    <code>SFSpeechRecognizer</code>, which by default performs recognition on
+    Apple's servers rather than on the device. This is covered by Apple's own
+    privacy policy, not ours.
+  </li>
+  <li>
+    Your voice audio <strong>does not go to Google</strong>. Only the recognised
+    <em>text</em> is sent onward to Gemini. Your guide never receives the
+    recording.
+  </li>
+  <li>
+    The microphone is only live while a tour or Explore session is running, and
+    you can mute it at any time from the on-screen control.
+  </li>
+</ul>
+
+<h2>What stays on your iPhone</h2>
+<p>
+  Saved tours, your walk journal, postcards, downloaded narration audio and any
+  photographs you took are stored in the app's own container on the device. They
+  are not uploaded anywhere. If you have iCloud Backup enabled, they may be
+  included in your device backup, which is between you and Apple.
+</p>
+
+<h2>Children</h2>
+<p>
+  NaviMate is not directed at children and does not knowingly collect data
+  from children under 13.
+</p>
+
+<h2>AI-generated content</h2>
+<p>
+  Tour narration is written by a large language model at the moment you walk. It
+  is not written or reviewed by a human, and it can be wrong — confidently and
+  plausibly wrong — about dates, names and buildings. Treat it as an
+  enthusiastic guide rather than a reference work, and check anything that
+  matters.
+</p>
+<p>
+  Content filters are applied to every request, and every story in the app has a
+  <strong>Report this story</strong> button beneath it. Reports go to the support
+  address below and are read by a human.
+</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Revoke access</strong> to location, microphone, camera or speech recognition at any time in iOS Settings. The features that depend on them will stop working, and the rest of the app will continue.</li>
+  <li><strong>Delete individual tours</strong> from the History tab.</li>
+  <li><strong>Delete everything</strong> by deleting the app. Because nothing is stored on a server, that is genuinely all of it.</li>
+  <li><strong>Re-read this disclosure</strong> in the app at any time: Settings → Privacy &amp; Support.</li>
+</ul>
+
+<h2>Third-party processing</h2>
+<p>
+  Requests are sent to Google's Gemini API and are handled under
+  <a href="https://ai.google.dev/gemini-api/terms">Google's Gemini API terms</a> and
+  <a href="https://policies.google.com/privacy">privacy policy</a>. Speech
+  recognition is handled under
+  <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
+  NaviMate has no other third-party SDKs of any kind.
+</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes in a way that affects what is collected or who receives
+  it, the in-app disclosure will be shown again before the change takes effect.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Questions, reports or data requests:
+  <a href="mailto:navimatellc@gmail.com">navimatellc@gmail.com</a>
+</p>
+
+<footer>
+  NaviMate · This page contains no trackers, no cookies and no analytics.
+</footer>
+
+</body>
+</html>
